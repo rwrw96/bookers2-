@@ -1,1 +1,19 @@
-<h1>top page</h1>
+<h1>User Info</h1>
+<%= @user %>
+
+
+<h2>New Book</h2>
+<%= form_with model:@book , local:true do |f| %>
+<p>Title</p>
+<%= f.text_field :title %>
+<p>opinion</p>
+<%= f.text_area :body %>
+<%= f.submit "Create Book" %>
+<% end %>
+
+<% if @messages.present? %>
+<% @books.each do |book| %>
+<p><%= book.title %></p>
+<p><%= book.body %></p>
+<% end %>
+<% end %>
