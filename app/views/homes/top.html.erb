@@ -1,7 +1,7 @@
 <h1>User Info</h1>
 <%= current_user.name %>
 
-
+<%= link_to "Update", "users/edit" %>
 <h2>New Book</h2>
 <%= form_with model:@book , local:true do |f| %>
 <p>Title</p>
@@ -11,9 +11,7 @@
 <%= f.submit "Create Book" %>
 <% end %>
 
-<% if @messages.present? %>
 <% @books.each do |book| %>
 <p><%= book.title %></p>
 <p><%= book.body %></p>
-<% end %>
 <% end %>
