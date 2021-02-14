@@ -1,8 +1,8 @@
 <h2>User Info</h2>
-<%= form_with model:@user , url:edit_user_registration_path,  local:true do |f| %>
+<%= form_with local:true do |f| %>
 <p>Name</p>
 <%= f.text_field :name%>
-<p>introductionoooooo</p>
+<p>introduction</p>
 <%= f.text_area :introduction %>
 <%= f.submit "Update Book" %>
 <% end %>

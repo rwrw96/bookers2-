@@ -1,7 +1,7 @@
 <h1>User Info</h1>
 <%= current_user.name %>
 
-<%= link_to "Update", "users/edit" %>
+<%= link_to "Update", users_edit_path %>
 <h2>New Book</h2>
 <%= form_with model:@book , local:true do |f| %>
 <p>Title</p>
