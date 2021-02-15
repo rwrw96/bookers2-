@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/" => "books#index"
   post "/" => "books#new"
   post "/" => "books#create"
+  post "books/:id/edit" => "books#update"
   get "books/index" => "books#index"
   post "users/:id/edit" => "users#update"
 end

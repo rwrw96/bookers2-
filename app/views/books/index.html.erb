@@ -13,6 +13,9 @@
 <% end %>
 
 <% @books.each do |book| %>
-<p><%= book.title %></p>
-<p><%= book.body %></p>
+<tr>
+<th><%= book.title %></th>
+<th><%= book.body %></th>
+<th><%= link_to "edit", edit_book_path(book.id) %></th>
+</tr><br>
 <% end %>
