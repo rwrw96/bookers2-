@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   post "users/index" => "books#create"
   post "users/:id/edit" => "users#update"
   get "users/index" => "users#index"
+  get "users/index" => "users#show"
+  get "users/:id/show" => "users#show"
 end

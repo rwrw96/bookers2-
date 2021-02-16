@@ -1,7 +1,7 @@
 <h1>User Info</h1>
 <%= image_tag current_user.image.url if current_user.image? %>
-<%= current_user.name %>
-<%= current_user.introduction %>
+<%= @user.name %>
+<%= @user.introduction %>
 
 <%= link_to "Update", edit_user_path(current_user.id) %>
 <h2>New Book</h2>
@@ -13,10 +13,10 @@
 <%= f.submit "Create Book" %>
 <% end %>
 
-<% @users.each do |user| %>
+<% @books.each do |book| %>
 <tr>
-<th><%= image_tag user.image.url %></th>
-<th><%= user.name %></th>
+<th><%= book.title %></th>
+<th><%= book.body %></th>
 <th><%= link_to "show", "/users/:id/show" %></th>
 </tr><br>
 <% end %>
