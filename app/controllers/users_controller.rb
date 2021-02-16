@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!
     def index
+        @users = User.all
     end
     
     def edit
@@ -15,6 +16,6 @@ class UsersController < ApplicationController
     
     private
     def user_params
-        params.permit(:name, :introduction)
+        params.permit(:name, :introduction, :image)
     end
 end

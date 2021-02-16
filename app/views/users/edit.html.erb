@@ -2,6 +2,8 @@
 <%= form_with model:@users , local:true do |f| %>
 <p>Name</p>
 <%= f.text_field :name%>
+<p>Image</p>
+<%= f.file_field :image %>
 <p>introduction</p>
 <%= f.text_area :introduction %>
 <%= f.submit "Update User" %>
