@@ -5,8 +5,9 @@ class UsersController < ApplicationController
     end
     
     def show
-        @books = Book.all
+        @book = Book.new
         @user = User.find(params[:id])
+        @books = @user.books
     end
     
     def edit
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
     def update
         @user = User.find(params[:id])
         @user.update(user_params)
-        redirect_to "/"
+        redirect_to 
     end
     
     private

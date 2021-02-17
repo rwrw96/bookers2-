@@ -17,6 +17,6 @@
 <tr>
 <th><%= book.title %></th>
 <th><%= book.body %></th>
-<th><%= link_to "show", "/users/:id/show" %></th>
+<th><%= link_to "show", book_path(book.id) %></th>
 </tr><br>
 <% end %>
