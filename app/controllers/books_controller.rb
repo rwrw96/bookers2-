@@ -10,7 +10,8 @@ class BooksController < ApplicationController
     end
     
     def show
-        @books = Book.where(user_id: current_user.id)
+        @book = Book.find(params[user_id])
+        @user = User.find(params[@book.user_id])
     end
     
     def create
@@ -36,7 +37,6 @@ class BooksController < ApplicationController
         @book.destroy
         redirect_to "/"
     end
-
     
     private
     def book_params
