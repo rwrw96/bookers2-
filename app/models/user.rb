@@ -6,5 +6,7 @@ class User < ApplicationRecord
          
   mount_uploader :image, ImageUploader
   
+  validates :name , uniqueness: true , length: {minimum: 2, maximum: 20}
+  
   has_many :books, dependent: :destroy
 end
