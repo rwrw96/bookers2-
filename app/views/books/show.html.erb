@@ -15,9 +15,11 @@
 
 
 <tr>
-<th><%= link_to @user.name %></th>
-<th><%= link_to @book.title, user_path(@user.id) %></th>
+<th><%= link_to @user.name , user_path(@user.id) %></th>
+<th><%= link_to @book.title %></th>
 <th><%= @book.body %></th>
-<th><%= link_to "edit", edit_book_path(book.id) %></th>
-<th><%= link_to "destroy", book_path(book.id), method: :delete,  data: { confirm: '本当に消しますか？' }  %></th>
+<% if @book.user_id == current_user.id %>
+<th><%= link_to "edit", edit_book_path(@book.id) %></th>
+<th><%= link_to "destroy", book_path(@book.id), method: :delete,  data: { confirm: '本当に消しますか？' }  %></th>
+<% end %>
 </tr><br>

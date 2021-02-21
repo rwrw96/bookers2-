@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :books
   resources :users
+  root to: "homes#top"
+  
+  # post "users" => "books#create"
   post "users/:id/edit" => "users#update"
-
+  post "books/:id/edit" => "books#update"
   # get "/" => "books#show"
   # post "/" => "books#create"
   # get "homes/top" => "homes#top"
