@@ -1,5 +1,6 @@
+<%= notice %>
 <h1>User Info</h1>
-<%= image_tag current_user.image.url if current_user.image? %>
+<%= image_tag current_user.profile_image_id.url if current_user.profile_image_id? %>
 <%= current_user.name %>
 <%= current_user.introduction %>
 
