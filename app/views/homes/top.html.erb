@@ -1,11 +1,7 @@
-<%= link_to "Bookers" , root_path %>
-<%= link_to "Home" , user_path(current_user.id) %>
-<%= link_to "Users" , users_path %>
-<%= link_to "Books" , books_path %>
-<%= link_to "logout" , destroy_user_session_path , method: :delete %>
+<%= render partial: 'users/list', locals: { book: @book } %>
 
-<h1>welcome to Bookers !!</h1>
-<p>In Bookers,</p>
+<h1>welcome to<i class="fas fa-book">Bookers</i>!!</h1>
+<p>In <i class="fas fa-book">Bookers</i>,</p>
 <p>you can share and exchange your opinions , inpressions , and emotions</p>
 <p>about various books!</p>
 <%= link_to "Login" , new_user_session_path %>

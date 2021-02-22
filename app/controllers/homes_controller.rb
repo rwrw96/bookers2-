@@ -1,5 +1,10 @@
 class HomesController < ApplicationController
+    before_action :move_to_signed_in, except: [:top,:about]
+    
     def top
+    end
+    
+    def about
     end
     
     # def sign_up

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "homes#top"
   
   # post "users/show" => "books#create"
+  get "homes/about" => "homes#about"
   post "users/:id/edit" => "users#update"
   post "books/:id/edit" => "books#update"
   post "users" => "books#create"
