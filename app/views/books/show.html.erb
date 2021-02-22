@@ -1,19 +1,6 @@
+<%= render partial: 'users/list', locals: { book: @book } %>
+
 <%= notice %>
-<h1>User Info</h1>
-<%= image_tag current_user.profile_image_id.url if current_user.profile_image_id? %>
-<%= current_user.name %>
-<%= current_user.introduction %>
-
-<%= link_to "Update", edit_user_path(current_user.id) %>
-<h2>New Book</h2>
-<%= form_with model:@book , local:true do |f| %>
-<p>Title</p>
-<%= f.text_field :title %>
-<p>opinion</p>
-<%= f.text_area :body %>
-<%= f.submit "Create Book" %>
-<% end %>
-
 
 <tr>
 <h2>Book detail</h2>

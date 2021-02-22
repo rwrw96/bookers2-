@@ -1,3 +1,9 @@
+<%= link_to "Bookers" , root_path %>
+<%= link_to "Home" , user_path(current_user.id) %>
+<%= link_to "Users" , users_path %>
+<%= link_to "Books" , books_path %>
+<%= link_to "logout" , destroy_user_session_path , method: :delete %>
+
 <%= notice %>
 <h2>Editing Book</h2>
 <%= form_with model:@books , local:true do |f| %>

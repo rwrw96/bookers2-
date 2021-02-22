@@ -1,3 +1,9 @@
+<%= link_to "Bookers" , root_path %>
+<%= link_to "Home" , user_path(current_user.id) %>
+<%= link_to "Users" , users_path %>
+<%= link_to "Books" , books_path %>
+<%= link_to "logout" , destroy_user_session_path , method: :delete %>
+
 <h1>welcome to Bookers !!</h1>
 <p>In Bookers,</p>
 <p>you can share and exchange your opinions , inpressions , and emotions</p>
