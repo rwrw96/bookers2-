@@ -1,14 +1,17 @@
-<%= render partial: 'users/list', locals: { book: @book } %>
+<%= render partial: 'users/list', locals: { book: @book , user: @user } %>
 
 <%= notice %>
 
+<div class="col-md-7">
 <tr>
 <h2>Book detail</h2>
+<th><%= image_tag @user.profile_image_id.url %></th>
 <th><%= link_to @user.name , user_path(@user.id) %></th>
 <th><%= link_to @book.title %></th>
 <th><%= @book.body %></th>
 <% if @book.user_id == current_user.id %>
-<th><%= link_to "edit", edit_book_path(@book.id) %></th>
-<th><%= link_to "destroy", book_path(@book.id), method: :delete,  data: { confirm: '本当に消しますか？' }  %></th>
+<th><%= link_to "Edit", edit_book_path(@book.id) %></th>
+<th><%= link_to "Destroy", book_path(@book.id), method: :delete,  data: { confirm: '本当に消しますか？' }  %></th>
 <% end %>
 </tr><br>
+</div>

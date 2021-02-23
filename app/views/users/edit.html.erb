@@ -4,14 +4,13 @@
 <%= link_to "Books" , books_path %>
 <%= link_to "logout" , destroy_user_session_path , method: :delete %>
 
-<%= notice %>
 <h2>User Info</h2>
 <%= form_with model:@users , local:true do |f| %>
 <p>Name</p>
 <%= f.text_field :name%>
 <p>Image</p>
 <%= f.file_field :image %>
-<p>introduction</p>
+<p>Introduction</p>  
 <%= f.text_area :introduction %>
 <%= f.submit "Update User" %>
 <% end %>

@@ -29,32 +29,34 @@
         <% end %>
     <% end %>
 </header>
-
+<%= notice %>
 <% if user_signed_in? %>
 <body>
     <div class="container">  
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-md-5">
                 <h2>User Info</h2>
-                    <%= image_tag current_user.profile_image_id.url if current_user.profile_image_id? %>
+                    
                         <table class="table table-striped">
+                            <td><%= image_tag user.profile_image_id.url %></td>
                             <td>name</td>
-                            <td><%= current_user.name %>
+                            <td><%= user.name %>
                             <td>introduction</td>
-                            <td><%= current_user.introduction %></td>
+                            <td><%= user.introduction %></td>
                         </table>
+                    <% if user.id == current_user.id %>
                     <%= link_to "Update", edit_user_path(current_user.id) %>
-
-                <h2>New Book</h2>
+                    <% end %>
+                <h2>New book</h2>
                     <%= form_with model:book , local:true do |f| %>
                         <p>Title</p>
                             <%= f.text_field :title %>
-                        <p>opinion</p>
+                        <p>Opinion</p>
                             <%= f.text_area :body %>
                         <%= f.submit "Create Book" %>
                     <% end %>
                     <% end %>
-            </div>
+            </div>        
         </div>
     </div>
 </body>
