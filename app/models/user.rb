@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  mount_uploader :profile_image_id, ImageUploader
+  
+  attachment :profile_image
   
   validates :name , uniqueness: true , length: {minimum: 2, maximum: 20}
   validates :introduction , length: { maximum: 50 }

@@ -1,0 +1,31 @@
+<header>
+    <% if user_signed_in? %>
+        <%= link_to "Bookers" , root_path %>
+        <%= link_to user_path(current_user.id) do %>
+            <i class="fas fa-home"></i>Home
+        <% end %>
+        <%= link_to users_path do %>
+            <i class="fas fa-users"></i>Users
+        <% end %>
+        <%= link_to books_path do %>
+            <i class="fas fa-book-open"></i>Books
+        <% end %>
+        <%= link_to destroy_user_session_path , method: :delete do %>
+            <i class="fas fa-sign-out-alt"></i>logout
+        <% end %>
+    <% else %>
+        <%= link_to "Bookers" , root_path %>
+        <%= link_to root_path do %>
+            <i class="fas fa-home"></i>Home
+        <% end %>
+        <%= link_to "/home/about" do %>
+            <i class="fas fa-link"></i>About
+        <% end %>
+        <%= link_to new_user_registration_path do %>
+            <i class="fas fa-user-plus"></i>sign up
+        <% end %>
+        <%= link_to new_user_session_path do %>
+            <i class="fas fa-sign-in-alt"></i>login
+        <% end %>
+    <% end %>
+</header>

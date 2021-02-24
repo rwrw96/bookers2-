@@ -1,28 +1,30 @@
 class BooksController < ApplicationController
-    before_action :book_params, only: [:destroy]
-    def new
-        @book = Book.new
-        @books = Book.all
-    end
+    # def new
+    #     @book = Book.new
+    #     @books = Book.all
+    # end
     
     def index
+        @book = Book.new
         @books = Book.all
         @user = current_user
     end
     
     def show
+        @new_book = Book.new
         @book = Book.find(params[:id])
         @user = @book.user
     end
     
     def create
+        # @user = @book.user
         @book = Book.new(book_params)
         @book.user_id = current_user.id
         if @book.save
             flash[:notice] = "successfully"
             redirect_to book_path(@book.id)
         else 
-            flash[:notice] = "error"
+            flash[:notice] = @book.errors.full_messages
             redirect_to books_path
         end
     end
@@ -45,7 +47,7 @@ class BooksController < ApplicationController
             redirect_to book_path(@book.id)
         else
             flash[:notice] = "error"
-            redirect_to edit_book_path(@book.id)
+            render :edit
         end
         end
     end
@@ -57,7 +59,12 @@ class BooksController < ApplicationController
     end
     
     private
+    
+    def user_params
+        params.require(:user).permit(:name, :introduction, :profile_image_id)
+    end
+
     def book_params
-       params.permit(:title, :body)    
+       params.require(:book).permit(:title, :body)    
     end
 end

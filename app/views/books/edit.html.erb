@@ -1,12 +1,8 @@
-<%= link_to "Bookers" , root_path %>
-<%= link_to "Home" , user_path(current_user.id) %>
-<%= link_to "Users" , users_path %>
-<%= link_to "Books" , books_path %>
-<%= link_to "logout" , destroy_user_session_path , method: :delete %>
+
 
 <%= notice %>
 <h2>Editing Book</h2>
-<%= form_with model:@books , local:true do |f| %>
+<%= form_with model:@book , local:true do |f| %>
 <p>Title</p>
 <%= f.text_field :title %>
 <p>Opinion</p>
@@ -14,5 +10,5 @@
 <%= f.submit "Update Book" %>
 <% end %>
 
-<%= link_to "show" , book_path(@book.id) %>
-<%= link_to "back" , books_path %>
+<%= link_to "Show" , book_path(@book.id) %>
+<%= link_to "Back" , books_path %>

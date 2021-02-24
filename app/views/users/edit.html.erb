@@ -1,15 +1,11 @@
-<%= link_to "Bookers" , root_path %>
-<%= link_to "Home" , user_path(current_user.id) %>
-<%= link_to "Users" , users_path %>
-<%= link_to "Books" , books_path %>
-<%= link_to "logout" , destroy_user_session_path , method: :delete %>
 
+<%= notice %>
 <h2>User Info</h2>
-<%= form_with model:@users , local:true do |f| %>
+<%= form_with model:@user , local:true do |f| %>
 <p>Name</p>
 <%= f.text_field :name%>
 <p>Image</p>
-<%= f.file_field :image %>
+<%= f.attachment_field :profile_image %>
 <p>Introduction</p>  
 <%= f.text_area :introduction %>
 <%= f.submit "Update User" %>

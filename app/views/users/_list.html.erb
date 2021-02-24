@@ -1,52 +1,21 @@
-<header>
+
+<div class="col-md-3">
     <% if user_signed_in? %>
-        <%= link_to "Bookers" , root_path %>
-        <%= link_to user_path(current_user.id) do %>
-            <i class="fas fa-home"></i>Home
-        <% end %>
-        <%= link_to users_path do %>
-            <i class="fas fa-users"></i>Users
-        <% end %>
-        <%= link_to books_path do %>
-            <i class="fas fa-book-open"></i>Books
-        <% end %>
-        <%= link_to destroy_user_session_path , method: :delete do %>
-            <i class="fas fa-sign-in-alt"></i>logout
-        <% end %>
-    <% else %>
-        <%= link_to "Bookers" , root_path %>
-        <%= link_to root_path do %>
-            <i class="fas fa-home"></i>Home
-        <% end %>
-        <%= link_to "homes/about" do %>
-            <i class="fas fa-link"></i>About
-        <% end %>
-        <%= link_to new_user_registration_path do %>
-            <i class="fas fa-user-plus"></i>sign up
-        <% end %>
-        <%= link_to new_user_session_path do %>
-            <i class="fas fa-sign-in-alt"></i>login
-        <% end %>
-    <% end %>
-</header>
-<%= notice %>
-<% if user_signed_in? %>
 <body>
-    <div class="container">  
-        <div class="row">
-            <div class="col-md-5">
+    <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      
+        
                 <h2>User Info</h2>
                     
                         <table class="table table-striped">
-                            <td><%= image_tag user.profile_image_id.url %></td>
+                            <td><%= attachment_image_tag user, :profile_image, size: "100x100", fallback: "default_image.jpg" %></td>
                             <td>name</td>
                             <td><%= user.name %>
                             <td>introduction</td>
                             <td><%= user.introduction %></td>
                         </table>
-                    <% if user.id == current_user.id %>
-                    <%= link_to "Update", edit_user_path(current_user.id) %>
-                    <% end %>
+                    <%= link_to "" , edit_user_path(user.id), class: "fas fa-user-cog" %>
                 <h2>New book</h2>
                     <%= form_with model:book , local:true do |f| %>
                         <p>Title</p>
@@ -56,7 +25,5 @@
                         <%= f.submit "Create Book" %>
                     <% end %>
                     <% end %>
-            </div>        
-        </div>
-    </div>
 </body>
+</div>
