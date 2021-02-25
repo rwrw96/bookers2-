@@ -1,9 +1,10 @@
 <div class="col-md-3">
     <% if user_signed_in? %>
 <body>
+    
+    
     <%= notice %>
     <%= alert %>
-      
         
                 <h2>User Info</h2>
                     
@@ -19,21 +20,20 @@
                             <th><%= user.introduction %></th>
                             </tr>
                         </table>
-                        <div class="btn btn-outline-secondary btn-block edit_user_1">
-                            <div class="fas fa-user-cog">
-                    <%= link_to "" , edit_user_path(user.id) %>
-                        </div>
-                        </div>
+                    <%= link_to edit_user_path(user.id) , class:"btn btn-outline-secondary btn-block" do %>
+                        <div class="fas fa-user-cog"></div>
+                        <% end %>
                 <h2>New book</h2>
                     <%= form_with model:book , local:true do |f| %>
                         <p>Title</p>
                             <%= f.text_field :title %>
                         <p>Opinion</p>
                             <%= f.text_area :body %>
-                        <div class="edit-btn">
-                        <%= f.submit "Create Book" %>
-                        </div>
+                            <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
                     <% end %>
                     <% end %>
-</body>
+
 </div>
+
+
+</body>
