@@ -16,23 +16,26 @@
 @import "bootstrap";
 
 header {
-    font-size: 16px;
     padding: 8px 16px;
-    background-color: #212529;
+}
+
+.container {
+    // padding: 0px 15px;
+    // margin: 0px 11.5px;
 }
 
 header a {
     color:white;
 }
 
-// .btn btn-info {
-//     color:white;
-// }
 
-.btn a {
-    color:white;
-    
+.link{
+    font-size: 16px;
+    padding: 8px;
 }
 
-.my_post {
+
+span {
+    font-size: 20px;
 }
+

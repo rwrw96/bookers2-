@@ -1,4 +1,6 @@
+<div class="row">
 <%= render partial: 'users/list', locals: { book: @book , user: @user } %>
+
 
 <div class="col-md-8 offset-md-1">
 <% @users.each do |user| %>
@@ -8,4 +10,5 @@
 <th><%= link_to "Show", user_path(user.id) %></th>
 </tr><br>
 <% end %>
+</div>
 </div>

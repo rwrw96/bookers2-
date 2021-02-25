@@ -1,7 +1,6 @@
+<div class="row">
 <%= render partial: 'users/list', locals: { book: @new_book , user: @user } %>
-
 <%= notice %>
-
 <div class="col-md-8 offset-md-1">
 <tr>
 <h2>Book detail</h2>
@@ -14,4 +13,5 @@
 <th><%= link_to "Destroy", book_path(@book.id), method: :delete,  data: { confirm: '本当に消しますか？' }  %></th>
 <% end %>
 </tr><br>
+</div>
 </div>
