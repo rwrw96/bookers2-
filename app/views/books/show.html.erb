@@ -2,16 +2,32 @@
 <%= render partial: 'users/list', locals: { book: @new_book , user: @user } %>
 <%= notice %>
 <div class="col-md-8 offset-md-1">
-<tr>
+
+<table>
 <h2>Book detail</h2>
-<th><%= attachment_image_tag @user, :profile_image, size: "100x100", fallback: "default_image.jpg" %></th>
-<th><%= link_to @user.name , user_path(@user.id) %></th>
-<th><%= link_to @book.title %></th>
-<th><%= @book.body %></th>
+
+    <tbody>
+        <tr>
+            <td><%= link_to user_path(@user.id) do %>
+            <%= attachment_image_tag @user, :profile_image, size: "40x40", fallback: "default_image.jpg" %>
+            <% end %></br>
+            <%= link_to @user.name , user_path(@user.id) %></td>
+<td><%= link_to @book.title %></td>
+<td><%= @book.body %></td>
 <% if @book.user_id == current_user.id %>
-<th><%= link_to "Edit", edit_book_path(@book.id) %></th>
-<th><%= link_to "Destroy", book_path(@book.id), method: :delete,  data: { confirm: '本当に消しますか？' }  %></th>
+<td>
+<div class="btn btn-success btn-sm">
+<%= link_to "Edit", edit_book_path(@book.id)%>
+</div>
+</td>
+<td>
+<div class="btn btn-danger btn-sm">
+<%= link_to "Destroy", book_path(@book.id), method: :delete,  data: { confirm: '本当に消しますか？' }  %>
+</div>
+</td>
 <% end %>
-</tr><br>
+        </tr>
+    </tbody>
+</table>
 </div>
 </div>
