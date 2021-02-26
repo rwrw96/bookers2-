@@ -1,39 +1,39 @@
 <header>
     <% if user_signed_in? %>
-      <div class="navbar navbar-dark bg-dark">
-        <span><%= link_to "Bookers" , root_path %></span>
-              <div class="link">
-        <%= link_to user_path(current_user.id) do %>
-            <i class="fas fa-home"></i>Home
-        <% end %>
-        <%= link_to users_path do %>
-            <i class="fas fa-users"></i>Users
-        <% end %>
-        <%= link_to books_path do %>
-            <i class="fas fa-book-open"></i>Books
-        <% end %>
-        <%= link_to destroy_user_session_path , method: :delete do %>
-            <i class="fas fa-sign-out-alt"></i>logout
-        <% end %>
-             </div>
-             </div>
-    <% else %>
-      <div class="navbar navbar-dark bg-dark">
-        <%= link_to "Bookers" , root_path %>
-        <div class="link">
-        <%= link_to root_path do %>
-            <i class="fas fa-home"></i>Home
-        <% end %>
-        <%= link_to "/home/about" do %>
-            <i class="fas fa-link"></i>About
-        <% end %>
-        <%= link_to new_user_registration_path do %>
-            <i class="fas fa-user-plus"></i>sign up
-        <% end %>
-        <%= link_to new_user_session_path do %>
-            <i class="fas fa-sign-in-alt"></i>login
-        <% end %>
-    <% end %>
-       </div>
+        <div class="navbar navbar-dark bg-dark">
+            <span><%= link_to "Bookers" , root_path %></span>
+                <div class="link">
+                    <%= link_to user_path(current_user.id) do %>
+                        <i class="fas fa-home"></i>Home
+                    <% end %>
+                    <%= link_to users_path do %>
+                        <i class="fas fa-users"></i>Users
+                    <% end %>
+                    <%= link_to books_path do %>
+                        <i class="fas fa-book-open"></i>Books
+                    <% end %>
+                    <%= link_to destroy_user_session_path , method: :delete do %>
+                        <i class="fas fa-sign-out-alt"></i>logout
+                    <% end %>
+                </div>
         </div>
+    <% else %>
+      　<div class="navbar navbar-dark bg-dark">
+            <span><%= link_to "Bookers" , root_path %></span>
+                <div class="link">
+                    <%= link_to root_path do %>
+                        <i class="fas fa-home"></i>Home
+                    <% end %>
+                    <%= link_to "/home/about" do %>
+                        <i class="fas fa-link"></i>About
+                    <% end %>
+                    <%= link_to new_user_registration_path do %>
+                        <i class="fas fa-user-plus"></i>sign up
+                    <% end %>
+                    <%= link_to new_user_session_path do %>
+                        <i class="fas fa-sign-in-alt"></i>login
+                    <% end %>
+                </div>
+        </div>
+    <% end %>
 </header>
