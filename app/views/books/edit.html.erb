@@ -5,7 +5,7 @@
 <%= f.text_field :title %>
 <p>Opinion</p>
 <%= f.text_area :body %>
-<%= f.submit "Update Book" %>
+<input type="submit" name="commit" value="Update Book" class="btn btn-success d-block" data-disable-with="Update Book">
 <% end %>
 
 <%= link_to "Show" , book_path(@book.id) %>

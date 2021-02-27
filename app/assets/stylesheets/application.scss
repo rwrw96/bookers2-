@@ -1,26 +1,7 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 @import "bootstrap";
 
 header {
     margin-bottom: 20px;
-}
-
-.container {
-   
 }
 
 header a {
@@ -28,24 +9,13 @@ header a {
     padding:8px;
 }
 
-
 .link{
     font-size: 16px;
     padding: 8px;
 }
-
 
 span {
     font-size: 20px;
     padding: 0px 15px;
     margin: 0px 11.5px;
 }
-
-.edit_btn {
-    background :success;
-}
-
-// h2 {
-//     line-height: 2.5;
-//     // padding: 16px,0px,8px,0px;
-// }
